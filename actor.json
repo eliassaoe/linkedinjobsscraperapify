@@ -1,0 +1,61 @@
+{
+    "actorSpecification": 1,
+    "name": "linkedin-url-jobs-scraper",
+    "title": "LinkedIn URL Jobs Scraper",
+    "description": "Scrapes job listings from any LinkedIn jobs search URL provided by the user",
+    "version": "0.0",
+    "meta": {
+        "templateId": "js-crawlee"
+    },
+    "input": "./input_schema.json",
+    "dockerfile": "./Dockerfile",
+    "storages": {
+        "dataset": {
+            "actorSpecification": 1,
+            "views": {
+                "overview": {
+                    "title": "Overview",
+                    "transformation": {
+                        "fields": [
+                            "id",
+                            "title",
+                            "company",
+                            "location",
+                            "postedTime",
+                            "applyUrl"
+                        ]
+                    },
+                    "display": {
+                        "component": "table",
+                        "properties": {
+                            "id": {
+                                "label": "Job ID",
+                                "format": "text"
+                            },
+                            "title": {
+                                "label": "Title",
+                                "format": "text"
+                            },
+                            "company": {
+                                "label": "Company",
+                                "format": "text"
+                            },
+                            "location": {
+                                "label": "Location",
+                                "format": "text"
+                            },
+                            "postedTime": {
+                                "label": "Posted",
+                                "format": "text"
+                            },
+                            "applyUrl": {
+                                "label": "Apply URL",
+                                "format": "link"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
