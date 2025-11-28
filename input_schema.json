@@ -1,5 +1,6 @@
 {
     "title": "LinkedIn URL Jobs Scraper Input",
+    "description": "Enrich leads and companies with Linkfinder AI : https://linkfinderai.com/",
     "type": "object",
     "schemaVersion": 1,
     "properties": {
