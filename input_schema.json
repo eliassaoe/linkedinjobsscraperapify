@@ -1,0 +1,34 @@
+{
+    "title": "LinkedIn URL Jobs Scraper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "linkedinUrl": {
+            "title": "LinkedIn Jobs Search URL",
+            "type": "string",
+            "description": "Full LinkedIn jobs search URL (e.g., https://www.linkedin.com/jobs/search/?keywords=Sales&location=France)",
+            "editor": "textfield",
+            "example": "https://www.linkedin.com/jobs/search/?keywords=Sales&location=France&f_TPR=r86400",
+            "pattern": "^https://.*linkedin\\.com/jobs/search.*$"
+        },
+        "maxItems": {
+            "title": "Maximum number of jobs",
+            "type": "integer",
+            "description": "Maximum number of jobs to scrape (LinkedIn limits to 1000 results maximum)",
+            "default": 1000,
+            "minimum": 1,
+            "maximum": 1000
+        },
+        "proxyConfiguration": {
+            "title": "Proxy configuration",
+            "type": "object",
+            "description": "Proxy settings for the crawler (recommended to use Apify proxy)",
+            "editor": "proxy",
+            "default": {
+                "useApifyProxy": true,
+                "apifyProxyGroups": ["RESIDENTIAL"]
+            }
+        }
+    },
+    "required": ["linkedinUrl"]
+}
