@@ -4,15 +4,12 @@ import { CheerioCrawler } from 'crawlee';
 await Actor.init();
 
 const input = await Actor.getInput() || {};
-const linkedinUrl = input.linkedinUrl;
+// Use a default LinkedIn jobs search URL if none provided
+const linkedinUrl = input.linkedinUrl || 'https://www.linkedin.com/jobs/search';
 const maxItems = input.maxItems || 1000;
 
-if (!linkedinUrl) {
-    throw new Error('linkedinUrl is required!');
-}
-
-// Valider l'URL
-if (!linkedinUrl.includes('linkedin.com/jobs/search')) {
+// Valider l'URL only if provided
+if (input.linkedinUrl && !linkedinUrl.includes('linkedin.com/jobs/search')) {
     throw new Error('Invalid LinkedIn jobs search URL. Must contain "linkedin.com/jobs/search"');
 }
 
