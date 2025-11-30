@@ -30,6 +30,5 @@
                 "apifyProxyGroups": ["RESIDENTIAL"]
             }
         }
-    },
-    "required": ["linkedinUrl"]
+    }
 }
